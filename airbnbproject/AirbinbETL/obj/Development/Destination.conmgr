@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="LocalHost.AirbnbDW"
+  DTS:DTSID="{51B07EBA-D423-4645-A804-327CA368648E}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=.;Initial Catalog=AirbnbDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-AirbinbETL-{51B07EBA-D423-4645-A804-327CA368648E}LocalHost.AirbnbDW;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
