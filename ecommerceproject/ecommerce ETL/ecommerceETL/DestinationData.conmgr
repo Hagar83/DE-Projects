@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="LocalHost.ecommerce"
+  DTS:DTSID="{FB6F3E0E-48D9-42E2-ADBE-E9F590A88EF5}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=.;Initial Catalog=ecommerce;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-EcommerceETL-{FB6F3E0E-48D9-42E2-ADBE-E9F590A88EF5}LocalHost.ecommerce;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

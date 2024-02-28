@@ -1,0 +1,1547 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/14/2024 4:54:10 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-ITMKMCB"
+  DTS:CreatorName="DESKTOP-ITMKMCB\pc"
+  DTS:DTSID="{2D5E2F8F-29DE-4CDD-847F-A07C50DF26C5}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5270.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{3F4A8B64-27C5-46FC-9EF4-D2A2FC10CD00}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT- Feedback DIM"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{f5d81948-0b83-4489-9d86-679d23e6b106}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT- Feedback DIM"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT- Feedback DIM\Checking Data type"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Checking Data type"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT- Feedback DIM\Checking Data type.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT- Feedback DIM\Checking Data type.Inputs[Data Conversion Input].Columns[order_id]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="order_id"
+                      lineageId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].Columns[order_id]" />
+                    <inputColumn
+                      refId="Package\DFT- Feedback DIM\Checking Data type.Inputs[Data Conversion Input].Columns[feedback_score]"
+                      cachedDataType="r8"
+                      cachedName="feedback_score"
+                      lineageId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].Columns[feedback_score]" />
+                    <inputColumn
+                      refId="Package\DFT- Feedback DIM\Checking Data type.Inputs[Data Conversion Input].Columns[feedback_form_sent_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="feedback_form_sent_date"
+                      lineageId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].Columns[feedback_form_sent_date]" />
+                    <inputColumn
+                      refId="Package\DFT- Feedback DIM\Checking Data type.Inputs[Data Conversion Input].Columns[feedback_answer_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="feedback_answer_date"
+                      lineageId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].Columns[feedback_answer_date]" />
+                    <inputColumn
+                      refId="Package\DFT- Feedback DIM\Checking Data type.Inputs[Data Conversion Input].Columns[feedback_id]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="feedback_id"
+                      lineageId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].Columns[feedback_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT- Feedback DIM\Checking Data type.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\DFT- Feedback DIM\Checking Data type.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT- Feedback DIM\Checking Data type.Outputs[Data Conversion Output].Columns[Copy of order_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DFT- Feedback DIM\Checking Data type.Outputs[Data Conversion Output].Columns[Copy of order_id]"
+                      name="Copy of order_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].Columns[order_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Feedback DIM\Checking Data type.Outputs[Data Conversion Output].Columns[Copy of feedback_score]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT- Feedback DIM\Checking Data type.Outputs[Data Conversion Output].Columns[Copy of feedback_score]"
+                      name="Copy of feedback_score"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].Columns[feedback_score]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Feedback DIM\Checking Data type.Outputs[Data Conversion Output].Columns[Copy of feedback_form_sent_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT- Feedback DIM\Checking Data type.Outputs[Data Conversion Output].Columns[Copy of feedback_form_sent_date]"
+                      name="Copy of feedback_form_sent_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].Columns[feedback_form_sent_date]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Feedback DIM\Checking Data type.Outputs[Data Conversion Output].Columns[Copy of feedback_answer_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT- Feedback DIM\Checking Data type.Outputs[Data Conversion Output].Columns[Copy of feedback_answer_date]"
+                      name="Copy of feedback_answer_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].Columns[feedback_answer_date]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Feedback DIM\Checking Data type.Outputs[Data Conversion Output].Columns[Copy of feedback_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DFT- Feedback DIM\Checking Data type.Outputs[Data Conversion Output].Columns[Copy of feedback_id]"
+                      name="Copy of feedback_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].Columns[feedback_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT- Feedback DIM\Checking Data type.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\DFT- Feedback DIM\Checking Data type.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT- Feedback DIM\Checking Data type.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT- Feedback DIM\Checking Data type.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT- Feedback DIM\Checking Data type.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT- Feedback DIM\Checking Data type.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT- Feedback DIM\Feedback Table"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Feedback Table"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[feedback_dataset]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT- Feedback DIM\Feedback Table.Connections[OleDbConnection]"
+                  connectionManagerID="{E3D335D6-DDD3-4E18-A99F-EA512160B431}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.Ecommercesource]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].Columns[feedback_id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].ExternalColumns[feedback_id]"
+                      length="255"
+                      lineageId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].Columns[feedback_id]"
+                      name="feedback_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].Columns[order_id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].ExternalColumns[order_id]"
+                      length="255"
+                      lineageId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].Columns[order_id]"
+                      name="order_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].Columns[feedback_score]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].ExternalColumns[feedback_score]"
+                      lineageId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].Columns[feedback_score]"
+                      name="feedback_score"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].Columns[feedback_form_sent_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].ExternalColumns[feedback_form_sent_date]"
+                      lineageId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].Columns[feedback_form_sent_date]"
+                      name="feedback_form_sent_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].Columns[feedback_answer_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].ExternalColumns[feedback_answer_date]"
+                      lineageId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].Columns[feedback_answer_date]"
+                      name="feedback_answer_date"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].ExternalColumns[feedback_id]"
+                      dataType="wstr"
+                      length="255"
+                      name="feedback_id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].ExternalColumns[order_id]"
+                      dataType="wstr"
+                      length="255"
+                      name="order_id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].ExternalColumns[feedback_score]"
+                      dataType="r8"
+                      name="feedback_score" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].ExternalColumns[feedback_form_sent_date]"
+                      dataType="dbTimeStamp"
+                      name="feedback_form_sent_date" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].ExternalColumns[feedback_answer_date]"
+                      dataType="dbTimeStamp"
+                      name="feedback_answer_date" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Error Output].Columns[feedback_id]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Error Output].Columns[feedback_id]"
+                      name="feedback_id" />
+                    <outputColumn
+                      refId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Error Output].Columns[order_id]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Error Output].Columns[order_id]"
+                      name="order_id" />
+                    <outputColumn
+                      refId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Error Output].Columns[feedback_score]"
+                      dataType="r8"
+                      lineageId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Error Output].Columns[feedback_score]"
+                      name="feedback_score" />
+                    <outputColumn
+                      refId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Error Output].Columns[feedback_form_sent_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Error Output].Columns[feedback_form_sent_date]"
+                      name="feedback_form_sent_date" />
+                    <outputColumn
+                      refId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Error Output].Columns[feedback_answer_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Error Output].Columns[feedback_answer_date]"
+                      name="feedback_answer_date" />
+                    <outputColumn
+                      refId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT- Feedback DIM\Insert Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FeedbackDim]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT- Feedback DIM\Insert Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{FB6F3E0E-48D9-42E2-ADBE-E9F590A88EF5}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.ecommerce]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT- Feedback DIM\Insert Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="IgnoreFailure"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT- Feedback DIM\Insert Destination.Inputs[OLE DB Destination Input].Columns[Copy of feedback_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of feedback_id"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\DFT- Feedback DIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[feedback_id]"
+                      lineageId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[Copy of feedback_id]" />
+                    <inputColumn
+                      refId="Package\DFT- Feedback DIM\Insert Destination.Inputs[OLE DB Destination Input].Columns[Copy of order_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of order_id"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\DFT- Feedback DIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[order_id]"
+                      lineageId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[Copy of order_id]" />
+                    <inputColumn
+                      refId="Package\DFT- Feedback DIM\Insert Destination.Inputs[OLE DB Destination Input].Columns[Copy of feedback_score]"
+                      cachedDataType="i4"
+                      cachedName="Copy of feedback_score"
+                      cachedSortKeyPosition="3"
+                      externalMetadataColumnId="Package\DFT- Feedback DIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[feedback_score]"
+                      lineageId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[Copy of feedback_score]" />
+                    <inputColumn
+                      refId="Package\DFT- Feedback DIM\Insert Destination.Inputs[OLE DB Destination Input].Columns[Copy of feedback_form_sent_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Copy of feedback_form_sent_date"
+                      cachedSortKeyPosition="4"
+                      externalMetadataColumnId="Package\DFT- Feedback DIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[feedback_form_sent_date]"
+                      lineageId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[Copy of feedback_form_sent_date]" />
+                    <inputColumn
+                      refId="Package\DFT- Feedback DIM\Insert Destination.Inputs[OLE DB Destination Input].Columns[Copy of feedback_answer_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Copy of feedback_answer_date"
+                      cachedSortKeyPosition="5"
+                      externalMetadataColumnId="Package\DFT- Feedback DIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[feedback_answer_date]"
+                      lineageId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[Copy of feedback_answer_date]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT- Feedback DIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[feedback_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="feedback_id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- Feedback DIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[order_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="order_id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- Feedback DIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[feedback_score]"
+                      dataType="i4"
+                      name="feedback_score" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- Feedback DIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[feedback_form_sent_date]"
+                      dataType="dbTimeStamp"
+                      name="feedback_form_sent_date" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- Feedback DIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[feedback_answer_date]"
+                      dataType="dbTimeStamp"
+                      name="feedback_answer_date" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT- Feedback DIM\Insert Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT- Feedback DIM\Insert Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT- Feedback DIM\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT- Feedback DIM\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT- Feedback DIM\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT- Feedback DIM\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT- Feedback DIM\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[FeedbackDim] SET [feedback_answer_date] = ?,[feedback_form_sent_date] = ?,[feedback_score] = ?,[order_id] = ? WHERE [feedback_id] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT- Feedback DIM\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="{FB6F3E0E-48D9-42E2-ADBE-E9F590A88EF5}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.ecommerce]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT- Feedback DIM\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT- Feedback DIM\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of feedback_answer_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Copy of feedback_answer_date"
+                      cachedSortKeyPosition="5"
+                      externalMetadataColumnId="Package\DFT- Feedback DIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[Copy of feedback_answer_date]" />
+                    <inputColumn
+                      refId="Package\DFT- Feedback DIM\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of feedback_form_sent_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Copy of feedback_form_sent_date"
+                      cachedSortKeyPosition="4"
+                      externalMetadataColumnId="Package\DFT- Feedback DIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[Copy of feedback_form_sent_date]" />
+                    <inputColumn
+                      refId="Package\DFT- Feedback DIM\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of feedback_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of feedback_id"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\DFT- Feedback DIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[Copy of feedback_id]" />
+                    <inputColumn
+                      refId="Package\DFT- Feedback DIM\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of feedback_score]"
+                      cachedDataType="i4"
+                      cachedName="Copy of feedback_score"
+                      cachedSortKeyPosition="3"
+                      externalMetadataColumnId="Package\DFT- Feedback DIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[Copy of feedback_score]" />
+                    <inputColumn
+                      refId="Package\DFT- Feedback DIM\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of order_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of order_id"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\DFT- Feedback DIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[Copy of order_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT- Feedback DIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="dbTimeStamp"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT- Feedback DIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="dbTimeStamp"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT- Feedback DIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT- Feedback DIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT- Feedback DIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT- Feedback DIM\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\DFT- Feedback DIM\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT- Feedback DIM\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\DFT- Feedback DIM\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT- Feedback DIM\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT- Feedback DIM\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT- Feedback DIM\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT- Feedback DIM\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT- Feedback DIM\Remove duplicates"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Remove duplicates"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT- Feedback DIM\Remove duplicates.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT- Feedback DIM\Remove duplicates.Inputs[Sort Input].Columns[feedback_id]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="feedback_id"
+                      lineageId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].Columns[feedback_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Feedback DIM\Remove duplicates.Inputs[Sort Input].Columns[order_id]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="order_id"
+                      lineageId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].Columns[order_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Feedback DIM\Remove duplicates.Inputs[Sort Input].Columns[feedback_score]"
+                      cachedDataType="r8"
+                      cachedName="feedback_score"
+                      lineageId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].Columns[feedback_score]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Feedback DIM\Remove duplicates.Inputs[Sort Input].Columns[feedback_form_sent_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="feedback_form_sent_date"
+                      lineageId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].Columns[feedback_form_sent_date]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Feedback DIM\Remove duplicates.Inputs[Sort Input].Columns[feedback_answer_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="feedback_answer_date"
+                      lineageId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].Columns[feedback_answer_date]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Feedback DIM\Remove duplicates.Inputs[Sort Input].Columns[Copy of order_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of order_id"
+                      lineageId="Package\DFT- Feedback DIM\Checking Data type.Outputs[Data Conversion Output].Columns[Copy of order_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Feedback DIM\Remove duplicates.Inputs[Sort Input].Columns[Copy of feedback_score]"
+                      cachedDataType="i4"
+                      cachedName="Copy of feedback_score"
+                      lineageId="Package\DFT- Feedback DIM\Checking Data type.Outputs[Data Conversion Output].Columns[Copy of feedback_score]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Feedback DIM\Remove duplicates.Inputs[Sort Input].Columns[Copy of feedback_form_sent_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Copy of feedback_form_sent_date"
+                      lineageId="Package\DFT- Feedback DIM\Checking Data type.Outputs[Data Conversion Output].Columns[Copy of feedback_form_sent_date]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Feedback DIM\Remove duplicates.Inputs[Sort Input].Columns[Copy of feedback_answer_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Copy of feedback_answer_date"
+                      lineageId="Package\DFT- Feedback DIM\Checking Data type.Outputs[Data Conversion Output].Columns[Copy of feedback_answer_date]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">5</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Feedback DIM\Remove duplicates.Inputs[Sort Input].Columns[Copy of feedback_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of feedback_id"
+                      lineageId="Package\DFT- Feedback DIM\Checking Data type.Outputs[Data Conversion Output].Columns[Copy of feedback_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[feedback_id]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[feedback_id]"
+                      name="feedback_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].Columns[feedback_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[order_id]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[order_id]"
+                      name="order_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].Columns[order_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[feedback_score]"
+                      dataType="r8"
+                      lineageId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[feedback_score]"
+                      name="feedback_score">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].Columns[feedback_score]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[feedback_form_sent_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[feedback_form_sent_date]"
+                      name="feedback_form_sent_date">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].Columns[feedback_form_sent_date]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[feedback_answer_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[feedback_answer_date]"
+                      name="feedback_answer_date">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output].Columns[feedback_answer_date]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[Copy of order_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[Copy of order_id]"
+                      name="Copy of order_id"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT- Feedback DIM\Checking Data type.Outputs[Data Conversion Output].Columns[Copy of order_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[Copy of feedback_score]"
+                      dataType="i4"
+                      lineageId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[Copy of feedback_score]"
+                      name="Copy of feedback_score"
+                      sortKeyPosition="3">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT- Feedback DIM\Checking Data type.Outputs[Data Conversion Output].Columns[Copy of feedback_score]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[Copy of feedback_form_sent_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[Copy of feedback_form_sent_date]"
+                      name="Copy of feedback_form_sent_date"
+                      sortKeyPosition="4">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT- Feedback DIM\Checking Data type.Outputs[Data Conversion Output].Columns[Copy of feedback_form_sent_date]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[Copy of feedback_answer_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[Copy of feedback_answer_date]"
+                      name="Copy of feedback_answer_date"
+                      sortKeyPosition="5">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT- Feedback DIM\Checking Data type.Outputs[Data Conversion Output].Columns[Copy of feedback_answer_date]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[Copy of feedback_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[Copy of feedback_id]"
+                      name="Copy of feedback_id"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT- Feedback DIM\Checking Data type.Outputs[Data Conversion Output].Columns[Copy of feedback_id]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT- Feedback DIM\Slowly Changing Dimension"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+              name="Slowly Changing Dimension"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SELECT statement used to create a schema rowset."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [feedback_answer_date], [feedback_form_sent_date], [feedback_id], [feedback_score], [order_id] FROM [dbo].[FeedbackDim]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                  name="CurrentRowWhere"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                  name="UpdateChangingAttributeHistory">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                  name="FailOnFixedAttributeChange">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the column name for the inferred member."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether inferred member updates are detected."
+                  name="EnableInferredMember">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies that all rows in the input are new or the transformation detects the change type."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT- Feedback DIM\Slowly Changing Dimension.Connections[LookupConnection]"
+                  connectionManagerID="{FB6F3E0E-48D9-42E2-ADBE-E9F590A88EF5}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.ecommerce]"
+                  description="Defines the connection to use for lookups in the dimension table"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT- Feedback DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  name="Slowly Changing Dimension Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT- Feedback DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Copy of feedback_answer_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Copy of feedback_answer_date"
+                      cachedSortKeyPosition="5"
+                      externalMetadataColumnId="Package\DFT- Feedback DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[feedback_answer_date]"
+                      lineageId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[Copy of feedback_answer_date]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Feedback DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Copy of feedback_form_sent_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Copy of feedback_form_sent_date"
+                      cachedSortKeyPosition="4"
+                      externalMetadataColumnId="Package\DFT- Feedback DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[feedback_form_sent_date]"
+                      lineageId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[Copy of feedback_form_sent_date]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Feedback DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Copy of feedback_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of feedback_id"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\DFT- Feedback DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[feedback_id]"
+                      lineageId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[Copy of feedback_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Feedback DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Copy of feedback_score]"
+                      cachedDataType="i4"
+                      cachedName="Copy of feedback_score"
+                      cachedSortKeyPosition="3"
+                      externalMetadataColumnId="Package\DFT- Feedback DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[feedback_score]"
+                      lineageId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[Copy of feedback_score]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Feedback DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Copy of order_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of order_id"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\DFT- Feedback DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[order_id]"
+                      lineageId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output].Columns[Copy of order_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT- Feedback DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[feedback_answer_date]"
+                      dataType="dbTimeStamp"
+                      name="feedback_answer_date" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- Feedback DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[feedback_form_sent_date]"
+                      dataType="dbTimeStamp"
+                      name="feedback_form_sent_date" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- Feedback DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[feedback_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="feedback_id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- Feedback DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[feedback_score]"
+                      dataType="i4"
+                      name="feedback_score" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- Feedback DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[order_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="order_id" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT- Feedback DIM\Slowly Changing Dimension.Outputs[Unchanged Output]"
+                  description="Unchanged rows"
+                  exclusionGroup="1"
+                  name="Unchanged Output"
+                  synchronousInputId="Package\DFT- Feedback DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT- Feedback DIM\Slowly Changing Dimension.Outputs[New Output]"
+                  description="New rows"
+                  exclusionGroup="1"
+                  name="New Output"
+                  synchronousInputId="Package\DFT- Feedback DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT- Feedback DIM\Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
+                  description="Rows with changes in columns tagged FixedAttribute"
+                  exclusionGroup="1"
+                  name="Fixed Attribute Output"
+                  synchronousInputId="Package\DFT- Feedback DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT- Feedback DIM\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
+                  description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                  exclusionGroup="1"
+                  name="Changing Attribute Updates Output"
+                  synchronousInputId="Package\DFT- Feedback DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT- Feedback DIM\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
+                  description="HistoricalAttribute (Type 2) changes result in these new rows"
+                  exclusionGroup="2"
+                  name="Historical Attribute Inserts Output"
+                  synchronousInputId="Package\DFT- Feedback DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT- Feedback DIM\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
+                  description="Information to update unpopulated initial dimension row"
+                  exclusionGroup="1"
+                  name="Inferred Member Updates Output"
+                  synchronousInputId="Package\DFT- Feedback DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT- Feedback DIM.Paths[Changing Attribute Updates Output]"
+              endId="Package\DFT- Feedback DIM\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Changing Attribute Updates Output"
+              startId="Package\DFT- Feedback DIM\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
+            <path
+              refId="Package\DFT- Feedback DIM.Paths[Data Conversion Output]"
+              endId="Package\DFT- Feedback DIM\Remove duplicates.Inputs[Sort Input]"
+              name="Data Conversion Output"
+              startId="Package\DFT- Feedback DIM\Checking Data type.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\DFT- Feedback DIM.Paths[New Output]"
+              endId="Package\DFT- Feedback DIM\Insert Destination.Inputs[OLE DB Destination Input]"
+              name="New Output"
+              startId="Package\DFT- Feedback DIM\Slowly Changing Dimension.Outputs[New Output]" />
+            <path
+              refId="Package\DFT- Feedback DIM.Paths[OLE DB Source Output]"
+              endId="Package\DFT- Feedback DIM\Checking Data type.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT- Feedback DIM\Feedback Table.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DFT- Feedback DIM.Paths[Sort Output]"
+              endId="Package\DFT- Feedback DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              name="Sort Output"
+              startId="Package\DFT- Feedback DIM\Remove duplicates.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="172,41.6"
+          Id="Package\DFT- Feedback DIM"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT- Feedback DIM">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\DFT- Feedback DIM\Slowly Changing Dimension"
+          TopLeft="206.7,310.3" />
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\DFT- Feedback DIM\Feedback Table"
+          TopLeft="234.7,5.49999999999995" />
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\DFT- Feedback DIM\Remove duplicates"
+          TopLeft="261.9,208.7" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\DFT- Feedback DIM\Insert Destination"
+          TopLeft="5.50000000000004,411.9" />
+        <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\DFT- Feedback DIM\Checking Data type"
+          TopLeft="233.1,107.1" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\DFT- Feedback DIM\OLE DB Command"
+          TopLeft="228.3,411.9" />
+        <EdgeLayout
+          Id="Package\DFT- Feedback DIM.Paths[Sort Output]"
+          TopLeft="345.1,250.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-34.3999999999999,60"
+              Start="0,0"
+              End="-34.3999999999999,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="-4,30" />
+                  <mssgle:LineSegment
+                    End="-30.3999999999999,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-30.3999999999999,30"
+                    Point2="-34.3999999999999,30"
+                    Point3="-34.3999999999999,34" />
+                  <mssgle:LineSegment
+                    End="-34.3999999999999,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT- Feedback DIM.Paths[OLE DB Source Output]"
+          TopLeft="314.3,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT- Feedback DIM.Paths[New Output]"
+          TopLeft="277.366666666667,351.9">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-190.666666666667,60"
+              Start="0,0"
+              End="-190.666666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2748091603053" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2748091603053"
+                    Point2="0,24.2748091603053"
+                    Point3="-4,24.2748091603053" />
+                  <mssgle:LineSegment
+                    End="-186.666666666667,24.2748091603053" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-186.666666666667,24.2748091603053"
+                    Point2="-190.666666666667,24.2748091603053"
+                    Point3="-190.666666666667,28.2748091603053" />
+                  <mssgle:LineSegment
+                    End="-190.666666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-122.424720052083,29.2748091603053,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT- Feedback DIM.Paths[Data Conversion Output]"
+          TopLeft="317.9,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="27.2,59.9999999999999"
+              Start="0,0"
+              End="27.2,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.9999999999999" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.9999999999999"
+                    Point2="0,29.9999999999999"
+                    Point3="4,29.9999999999999" />
+                  <mssgle:LineSegment
+                    End="23.2,29.9999999999999" />
+                  <mssgle:CubicBezierSegment
+                    Point1="23.2,29.9999999999999"
+                    Point2="27.2,29.9999999999999"
+                    Point3="27.2,33.9999999999999" />
+                  <mssgle:LineSegment
+                    End="27.2,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT- Feedback DIM.Paths[Changing Attribute Updates Output]"
+          TopLeft="344.033333333333,351.9">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-33.3333333333333,60"
+              Start="0,0"
+              End="-33.3333333333333,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2748091603054" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2748091603054"
+                    Point2="0,24.2748091603054"
+                    Point3="-4,24.2748091603054" />
+                  <mssgle:LineSegment
+                    End="-29.3333333333333,24.2748091603054" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-29.3333333333333,24.2748091603054"
+                    Point2="-33.3333333333333,24.2748091603054"
+                    Point3="-33.3333333333333,28.2748091603054" />
+                  <mssgle:LineSegment
+                    End="-33.3333333333333,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-95.2005729166667,29.2748091603054,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

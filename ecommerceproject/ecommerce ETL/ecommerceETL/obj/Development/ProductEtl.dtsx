@@ -1,0 +1,2053 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/14/2024 4:55:34 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-ITMKMCB"
+  DTS:CreatorName="DESKTOP-ITMKMCB\pc"
+  DTS:DTSID="{89F1493A-8A4D-46E2-9D32-58660D1C0266}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5270.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{1F46E383-B2D0-456A-8042-25C275DDA2AB}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT- Product DIM"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{7799167f-d909-4d34-bcbe-42725f0a3268}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT- Product DIM"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT- Product DIM\Checking Datatypes"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Checking Datatypes"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT- Product DIM\Checking Datatypes.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Checking Datatypes.Inputs[Data Conversion Input].Columns[product_id]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="product_id"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_id]" />
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Checking Datatypes.Inputs[Data Conversion Input].Columns[product_category]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="product_category"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_category]" />
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Checking Datatypes.Inputs[Data Conversion Input].Columns[product_name_lenght]"
+                      cachedDataType="r8"
+                      cachedName="product_name_lenght"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_name_lenght]" />
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Checking Datatypes.Inputs[Data Conversion Input].Columns[product_description_lenght]"
+                      cachedDataType="r8"
+                      cachedName="product_description_lenght"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_description_lenght]" />
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Checking Datatypes.Inputs[Data Conversion Input].Columns[product_weight_g]"
+                      cachedDataType="r8"
+                      cachedName="product_weight_g"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_weight_g]" />
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Checking Datatypes.Inputs[Data Conversion Input].Columns[product_length_cm]"
+                      cachedDataType="r8"
+                      cachedName="product_length_cm"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_length_cm]" />
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Checking Datatypes.Inputs[Data Conversion Input].Columns[product_height_cm]"
+                      cachedDataType="r8"
+                      cachedName="product_height_cm"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_height_cm]" />
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Checking Datatypes.Inputs[Data Conversion Input].Columns[product_width_cm]"
+                      cachedDataType="r8"
+                      cachedName="product_width_cm"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_width_cm]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\DFT- Product DIM\Checking Datatypes.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Output].Columns[Copy of product_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Output].Columns[Copy of product_id]"
+                      name="Copy of product_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Output].Columns[Copy of product_category]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Output].Columns[Copy of product_category]"
+                      name="Copy of product_category"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_category]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Output].Columns[Copy of product_name_lenght]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Output].Columns[Copy of product_name_lenght]"
+                      name="Copy of product_name_lenght"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_name_lenght]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Output].Columns[Copy of product_description_lenght]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Output].Columns[Copy of product_description_lenght]"
+                      name="Copy of product_description_lenght"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_description_lenght]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Output].Columns[Copy of product_weight_g]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Output].Columns[Copy of product_weight_g]"
+                      name="Copy of product_weight_g"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_weight_g]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Output].Columns[Copy of product_length_cm]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Output].Columns[Copy of product_length_cm]"
+                      name="Copy of product_length_cm"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_length_cm]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Output].Columns[Copy of product_height_cm]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Output].Columns[Copy of product_height_cm]"
+                      name="Copy of product_height_cm"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_height_cm]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Output].Columns[Copy of product_width_cm]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Output].Columns[Copy of product_width_cm]"
+                      name="Copy of product_width_cm"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_width_cm]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\DFT- Product DIM\Checking Datatypes.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT- Product DIM\Insert Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[ProductsDim]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT- Product DIM\Insert Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{FB6F3E0E-48D9-42E2-ADBE-E9F590A88EF5}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.ecommerce]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT- Product DIM\Insert Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Insert Destination.Inputs[OLE DB Destination Input].Columns[Copy of product_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of product_id"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\DFT- Product DIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[product_id]"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_id]" />
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Insert Destination.Inputs[OLE DB Destination Input].Columns[Copy of product_category]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of product_category"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\DFT- Product DIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[product_category]"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_category]" />
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Insert Destination.Inputs[OLE DB Destination Input].Columns[Copy of product_name_lenght]"
+                      cachedDataType="i4"
+                      cachedName="Copy of product_name_lenght"
+                      cachedSortKeyPosition="3"
+                      externalMetadataColumnId="Package\DFT- Product DIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[product_name_lenght]"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_name_lenght]" />
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Insert Destination.Inputs[OLE DB Destination Input].Columns[Copy of product_description_lenght]"
+                      cachedDataType="i4"
+                      cachedName="Copy of product_description_lenght"
+                      cachedSortKeyPosition="4"
+                      externalMetadataColumnId="Package\DFT- Product DIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[product_description_lenght]"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_description_lenght]" />
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Insert Destination.Inputs[OLE DB Destination Input].Columns[Copy of product_weight_g]"
+                      cachedDataType="i4"
+                      cachedName="Copy of product_weight_g"
+                      cachedSortKeyPosition="5"
+                      externalMetadataColumnId="Package\DFT- Product DIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[product_weight_g]"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_weight_g]" />
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Insert Destination.Inputs[OLE DB Destination Input].Columns[Copy of product_length_cm]"
+                      cachedDataType="i4"
+                      cachedName="Copy of product_length_cm"
+                      cachedSortKeyPosition="6"
+                      externalMetadataColumnId="Package\DFT- Product DIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[product_length_cm]"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_length_cm]" />
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Insert Destination.Inputs[OLE DB Destination Input].Columns[Copy of product_height_cm]"
+                      cachedDataType="i4"
+                      cachedName="Copy of product_height_cm"
+                      cachedSortKeyPosition="7"
+                      externalMetadataColumnId="Package\DFT- Product DIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[product_height_cm]"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_height_cm]" />
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Insert Destination.Inputs[OLE DB Destination Input].Columns[Copy of product_width_cm]"
+                      cachedDataType="i4"
+                      cachedName="Copy of product_width_cm"
+                      cachedSortKeyPosition="8"
+                      externalMetadataColumnId="Package\DFT- Product DIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[product_width_cm]"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_width_cm]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT- Product DIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[product_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- Product DIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[product_category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="product_category" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- Product DIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[product_name_lenght]"
+                      dataType="i4"
+                      name="product_name_lenght" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- Product DIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[product_description_lenght]"
+                      dataType="i4"
+                      name="product_description_lenght" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- Product DIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[product_weight_g]"
+                      dataType="i4"
+                      name="product_weight_g" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- Product DIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[product_length_cm]"
+                      dataType="i4"
+                      name="product_length_cm" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- Product DIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[product_height_cm]"
+                      dataType="i4"
+                      name="product_height_cm" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- Product DIM\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[product_width_cm]"
+                      dataType="i4"
+                      name="product_width_cm" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT- Product DIM\Insert Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT- Product DIM\Insert Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT- Product DIM\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT- Product DIM\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT- Product DIM\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[ProductsDim] SET [product_category] = ?,[product_description_lenght] = ?,[product_height_cm] = ?,[product_length_cm] = ?,[product_name_lenght] = ?,[product_weight_g] = ?,[product_width_cm] = ? WHERE [product_id] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT- Product DIM\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="{FB6F3E0E-48D9-42E2-ADBE-E9F590A88EF5}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.ecommerce]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT- Product DIM\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of product_category]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of product_category"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\DFT- Product DIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_category]" />
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of product_description_lenght]"
+                      cachedDataType="i4"
+                      cachedName="Copy of product_description_lenght"
+                      cachedSortKeyPosition="4"
+                      externalMetadataColumnId="Package\DFT- Product DIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_description_lenght]" />
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of product_height_cm]"
+                      cachedDataType="i4"
+                      cachedName="Copy of product_height_cm"
+                      cachedSortKeyPosition="7"
+                      externalMetadataColumnId="Package\DFT- Product DIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_height_cm]" />
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of product_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of product_id"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\DFT- Product DIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_id]" />
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of product_length_cm]"
+                      cachedDataType="i4"
+                      cachedName="Copy of product_length_cm"
+                      cachedSortKeyPosition="6"
+                      externalMetadataColumnId="Package\DFT- Product DIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_length_cm]" />
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of product_name_lenght]"
+                      cachedDataType="i4"
+                      cachedName="Copy of product_name_lenght"
+                      cachedSortKeyPosition="3"
+                      externalMetadataColumnId="Package\DFT- Product DIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_name_lenght]" />
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of product_weight_g]"
+                      cachedDataType="i4"
+                      cachedName="Copy of product_weight_g"
+                      cachedSortKeyPosition="5"
+                      externalMetadataColumnId="Package\DFT- Product DIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_weight_g]" />
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of product_width_cm]"
+                      cachedDataType="i4"
+                      cachedName="Copy of product_width_cm"
+                      cachedSortKeyPosition="8"
+                      externalMetadataColumnId="Package\DFT- Product DIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_width_cm]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT- Product DIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT- Product DIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT- Product DIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT- Product DIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="i4"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT- Product DIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="i4"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT- Product DIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      dataType="i4"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT- Product DIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      dataType="i4"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT- Product DIM\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT- Product DIM\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\DFT- Product DIM\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT- Product DIM\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\DFT- Product DIM\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT- Product DIM\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT- Product DIM\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT- Product DIM\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[products_dataset]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT- Product DIM\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{E3D335D6-DDD3-4E18-A99F-EA512160B431}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.Ecommercesource]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[product_id]"
+                      length="255"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_id]"
+                      name="product_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_category]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[product_category]"
+                      length="255"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_category]"
+                      name="product_category"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_name_lenght]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[product_name_lenght]"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_name_lenght]"
+                      name="product_name_lenght"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_description_lenght]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[product_description_lenght]"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_description_lenght]"
+                      name="product_description_lenght"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_photos_qty]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[product_photos_qty]"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_photos_qty]"
+                      name="product_photos_qty"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_weight_g]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[product_weight_g]"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_weight_g]"
+                      name="product_weight_g"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_length_cm]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[product_length_cm]"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_length_cm]"
+                      name="product_length_cm"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_height_cm]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[product_height_cm]"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_height_cm]"
+                      name="product_height_cm"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_width_cm]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[product_width_cm]"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_width_cm]"
+                      name="product_width_cm"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[product_id]"
+                      dataType="wstr"
+                      length="255"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[product_category]"
+                      dataType="wstr"
+                      length="255"
+                      name="product_category" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[product_name_lenght]"
+                      dataType="r8"
+                      name="product_name_lenght" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[product_description_lenght]"
+                      dataType="r8"
+                      name="product_description_lenght" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[product_photos_qty]"
+                      dataType="r8"
+                      name="product_photos_qty" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[product_weight_g]"
+                      dataType="r8"
+                      name="product_weight_g" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[product_length_cm]"
+                      dataType="r8"
+                      name="product_length_cm" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[product_height_cm]"
+                      dataType="r8"
+                      name="product_height_cm" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[product_width_cm]"
+                      dataType="r8"
+                      name="product_width_cm" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[product_id]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[product_id]"
+                      name="product_id" />
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[product_category]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[product_category]"
+                      name="product_category" />
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[product_name_lenght]"
+                      dataType="r8"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[product_name_lenght]"
+                      name="product_name_lenght" />
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[product_description_lenght]"
+                      dataType="r8"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[product_description_lenght]"
+                      name="product_description_lenght" />
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[product_photos_qty]"
+                      dataType="r8"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[product_photos_qty]"
+                      name="product_photos_qty" />
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[product_weight_g]"
+                      dataType="r8"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[product_weight_g]"
+                      name="product_weight_g" />
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[product_length_cm]"
+                      dataType="r8"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[product_length_cm]"
+                      name="product_length_cm" />
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[product_height_cm]"
+                      dataType="r8"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[product_height_cm]"
+                      name="product_height_cm" />
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[product_width_cm]"
+                      dataType="r8"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[product_width_cm]"
+                      name="product_width_cm" />
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT- Product DIM\Selecting columns"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Selecting columns"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT- Product DIM\Selecting columns.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Selecting columns.Inputs[Sort Input].Columns[product_id]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="product_id"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Selecting columns.Inputs[Sort Input].Columns[product_category]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="product_category"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_category]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Selecting columns.Inputs[Sort Input].Columns[product_name_lenght]"
+                      cachedDataType="r8"
+                      cachedName="product_name_lenght"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_name_lenght]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Selecting columns.Inputs[Sort Input].Columns[product_description_lenght]"
+                      cachedDataType="r8"
+                      cachedName="product_description_lenght"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_description_lenght]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Selecting columns.Inputs[Sort Input].Columns[product_photos_qty]"
+                      cachedDataType="r8"
+                      cachedName="product_photos_qty"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_photos_qty]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Selecting columns.Inputs[Sort Input].Columns[product_weight_g]"
+                      cachedDataType="r8"
+                      cachedName="product_weight_g"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_weight_g]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Selecting columns.Inputs[Sort Input].Columns[product_length_cm]"
+                      cachedDataType="r8"
+                      cachedName="product_length_cm"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_length_cm]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Selecting columns.Inputs[Sort Input].Columns[product_height_cm]"
+                      cachedDataType="r8"
+                      cachedName="product_height_cm"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_height_cm]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Selecting columns.Inputs[Sort Input].Columns[product_width_cm]"
+                      cachedDataType="r8"
+                      cachedName="product_width_cm"
+                      lineageId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_width_cm]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Selecting columns.Inputs[Sort Input].Columns[Copy of product_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of product_id"
+                      lineageId="Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Output].Columns[Copy of product_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Selecting columns.Inputs[Sort Input].Columns[Copy of product_category]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of product_category"
+                      lineageId="Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Output].Columns[Copy of product_category]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Selecting columns.Inputs[Sort Input].Columns[Copy of product_name_lenght]"
+                      cachedDataType="i4"
+                      cachedName="Copy of product_name_lenght"
+                      lineageId="Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Output].Columns[Copy of product_name_lenght]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Selecting columns.Inputs[Sort Input].Columns[Copy of product_description_lenght]"
+                      cachedDataType="i4"
+                      cachedName="Copy of product_description_lenght"
+                      lineageId="Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Output].Columns[Copy of product_description_lenght]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Selecting columns.Inputs[Sort Input].Columns[Copy of product_weight_g]"
+                      cachedDataType="i4"
+                      cachedName="Copy of product_weight_g"
+                      lineageId="Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Output].Columns[Copy of product_weight_g]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">5</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Selecting columns.Inputs[Sort Input].Columns[Copy of product_length_cm]"
+                      cachedDataType="i4"
+                      cachedName="Copy of product_length_cm"
+                      lineageId="Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Output].Columns[Copy of product_length_cm]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">6</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Selecting columns.Inputs[Sort Input].Columns[Copy of product_height_cm]"
+                      cachedDataType="i4"
+                      cachedName="Copy of product_height_cm"
+                      lineageId="Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Output].Columns[Copy of product_height_cm]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">7</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Selecting columns.Inputs[Sort Input].Columns[Copy of product_width_cm]"
+                      cachedDataType="i4"
+                      cachedName="Copy of product_width_cm"
+                      lineageId="Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Output].Columns[Copy of product_width_cm]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">8</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[product_id]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[product_id]"
+                      name="product_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[product_category]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[product_category]"
+                      name="product_category">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_category]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[product_name_lenght]"
+                      dataType="r8"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[product_name_lenght]"
+                      name="product_name_lenght">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_name_lenght]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[product_description_lenght]"
+                      dataType="r8"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[product_description_lenght]"
+                      name="product_description_lenght">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_description_lenght]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[product_photos_qty]"
+                      dataType="r8"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[product_photos_qty]"
+                      name="product_photos_qty">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_photos_qty]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[product_weight_g]"
+                      dataType="r8"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[product_weight_g]"
+                      name="product_weight_g">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_weight_g]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[product_length_cm]"
+                      dataType="r8"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[product_length_cm]"
+                      name="product_length_cm">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_length_cm]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[product_height_cm]"
+                      dataType="r8"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[product_height_cm]"
+                      name="product_height_cm">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_height_cm]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[product_width_cm]"
+                      dataType="r8"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[product_width_cm]"
+                      name="product_width_cm">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_width_cm]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_id]"
+                      name="Copy of product_id"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Output].Columns[Copy of product_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_category]"
+                      name="Copy of product_category"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Output].Columns[Copy of product_category]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_name_lenght]"
+                      dataType="i4"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_name_lenght]"
+                      name="Copy of product_name_lenght"
+                      sortKeyPosition="3">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Output].Columns[Copy of product_name_lenght]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_description_lenght]"
+                      dataType="i4"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_description_lenght]"
+                      name="Copy of product_description_lenght"
+                      sortKeyPosition="4">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Output].Columns[Copy of product_description_lenght]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_weight_g]"
+                      dataType="i4"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_weight_g]"
+                      name="Copy of product_weight_g"
+                      sortKeyPosition="5">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Output].Columns[Copy of product_weight_g]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_length_cm]"
+                      dataType="i4"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_length_cm]"
+                      name="Copy of product_length_cm"
+                      sortKeyPosition="6">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Output].Columns[Copy of product_length_cm]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_height_cm]"
+                      dataType="i4"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_height_cm]"
+                      name="Copy of product_height_cm"
+                      sortKeyPosition="7">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Output].Columns[Copy of product_height_cm]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_width_cm]"
+                      dataType="i4"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_width_cm]"
+                      name="Copy of product_width_cm"
+                      sortKeyPosition="8">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Output].Columns[Copy of product_width_cm]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT- Product DIM\Slowly Changing Dimension"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+              name="Slowly Changing Dimension"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SELECT statement used to create a schema rowset."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [product_category], [product_description_lenght], [product_height_cm], [product_id], [product_length_cm], [product_name_lenght], [product_weight_g], [product_width_cm] FROM [dbo].[ProductsDim]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                  name="CurrentRowWhere"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                  name="UpdateChangingAttributeHistory">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                  name="FailOnFixedAttributeChange">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the column name for the inferred member."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether inferred member updates are detected."
+                  name="EnableInferredMember">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies that all rows in the input are new or the transformation detects the change type."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT- Product DIM\Slowly Changing Dimension.Connections[LookupConnection]"
+                  connectionManagerID="{FB6F3E0E-48D9-42E2-ADBE-E9F590A88EF5}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.ecommerce]"
+                  description="Defines the connection to use for lookups in the dimension table"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT- Product DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  name="Slowly Changing Dimension Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Copy of product_category]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of product_category"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\DFT- Product DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[product_category]"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_category]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Copy of product_description_lenght]"
+                      cachedDataType="i4"
+                      cachedName="Copy of product_description_lenght"
+                      cachedSortKeyPosition="4"
+                      externalMetadataColumnId="Package\DFT- Product DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[product_description_lenght]"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_description_lenght]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Copy of product_height_cm]"
+                      cachedDataType="i4"
+                      cachedName="Copy of product_height_cm"
+                      cachedSortKeyPosition="7"
+                      externalMetadataColumnId="Package\DFT- Product DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[product_height_cm]"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_height_cm]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Copy of product_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of product_id"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\DFT- Product DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[product_id]"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Copy of product_length_cm]"
+                      cachedDataType="i4"
+                      cachedName="Copy of product_length_cm"
+                      cachedSortKeyPosition="6"
+                      externalMetadataColumnId="Package\DFT- Product DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[product_length_cm]"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_length_cm]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Copy of product_name_lenght]"
+                      cachedDataType="i4"
+                      cachedName="Copy of product_name_lenght"
+                      cachedSortKeyPosition="3"
+                      externalMetadataColumnId="Package\DFT- Product DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[product_name_lenght]"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_name_lenght]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Copy of product_weight_g]"
+                      cachedDataType="i4"
+                      cachedName="Copy of product_weight_g"
+                      cachedSortKeyPosition="5"
+                      externalMetadataColumnId="Package\DFT- Product DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[product_weight_g]"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_weight_g]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT- Product DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Copy of product_width_cm]"
+                      cachedDataType="i4"
+                      cachedName="Copy of product_width_cm"
+                      cachedSortKeyPosition="8"
+                      externalMetadataColumnId="Package\DFT- Product DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[product_width_cm]"
+                      lineageId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output].Columns[Copy of product_width_cm]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT- Product DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[product_category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="product_category" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- Product DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[product_description_lenght]"
+                      dataType="i4"
+                      name="product_description_lenght" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- Product DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[product_height_cm]"
+                      dataType="i4"
+                      name="product_height_cm" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- Product DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[product_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- Product DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[product_length_cm]"
+                      dataType="i4"
+                      name="product_length_cm" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- Product DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[product_name_lenght]"
+                      dataType="i4"
+                      name="product_name_lenght" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- Product DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[product_weight_g]"
+                      dataType="i4"
+                      name="product_weight_g" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- Product DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[product_width_cm]"
+                      dataType="i4"
+                      name="product_width_cm" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT- Product DIM\Slowly Changing Dimension.Outputs[Unchanged Output]"
+                  description="Unchanged rows"
+                  exclusionGroup="1"
+                  name="Unchanged Output"
+                  synchronousInputId="Package\DFT- Product DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT- Product DIM\Slowly Changing Dimension.Outputs[New Output]"
+                  description="New rows"
+                  exclusionGroup="1"
+                  name="New Output"
+                  synchronousInputId="Package\DFT- Product DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT- Product DIM\Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
+                  description="Rows with changes in columns tagged FixedAttribute"
+                  exclusionGroup="1"
+                  name="Fixed Attribute Output"
+                  synchronousInputId="Package\DFT- Product DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT- Product DIM\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
+                  description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                  exclusionGroup="1"
+                  name="Changing Attribute Updates Output"
+                  synchronousInputId="Package\DFT- Product DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT- Product DIM\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
+                  description="HistoricalAttribute (Type 2) changes result in these new rows"
+                  exclusionGroup="2"
+                  name="Historical Attribute Inserts Output"
+                  synchronousInputId="Package\DFT- Product DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT- Product DIM\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
+                  description="Information to update unpopulated initial dimension row"
+                  exclusionGroup="1"
+                  name="Inferred Member Updates Output"
+                  synchronousInputId="Package\DFT- Product DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT- Product DIM.Paths[Changing Attribute Updates Output]"
+              endId="Package\DFT- Product DIM\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Changing Attribute Updates Output"
+              startId="Package\DFT- Product DIM\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
+            <path
+              refId="Package\DFT- Product DIM.Paths[Data Conversion Output]"
+              endId="Package\DFT- Product DIM\Selecting columns.Inputs[Sort Input]"
+              name="Data Conversion Output"
+              startId="Package\DFT- Product DIM\Checking Datatypes.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\DFT- Product DIM.Paths[New Output]"
+              endId="Package\DFT- Product DIM\Insert Destination.Inputs[OLE DB Destination Input]"
+              name="New Output"
+              startId="Package\DFT- Product DIM\Slowly Changing Dimension.Outputs[New Output]" />
+            <path
+              refId="Package\DFT- Product DIM.Paths[OLE DB Source Output]"
+              endId="Package\DFT- Product DIM\Checking Datatypes.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT- Product DIM\OLE DB Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DFT- Product DIM.Paths[Sort Output]"
+              endId="Package\DFT- Product DIM\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              name="Sort Output"
+              startId="Package\DFT- Product DIM\Selecting columns.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="163.2,41.6"
+          Id="Package\DFT- Product DIM"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT- Product DIM">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="163.2,41.6"
+          Id="Package\DFT- Product DIM\Selecting columns"
+          TopLeft="261.9,208.7" />
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\DFT- Product DIM\OLE DB Source"
+          TopLeft="235.9,5.49999999999995" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\DFT- Product DIM\Insert Destination"
+          TopLeft="5.50000000000004,411.9" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\DFT- Product DIM\OLE DB Command"
+          TopLeft="228.3,411.9" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\DFT- Product DIM\Checking Datatypes"
+          TopLeft="233.1,107.1" />
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\DFT- Product DIM\Slowly Changing Dimension"
+          TopLeft="206.7,310.3" />
+        <EdgeLayout
+          Id="Package\DFT- Product DIM.Paths[Sort Output]"
+          TopLeft="343.5,250.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-32.8,60"
+              Start="0,0"
+              End="-32.8,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="-4,30" />
+                  <mssgle:LineSegment
+                    End="-28.8,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-28.8,30"
+                    Point2="-32.8,30"
+                    Point3="-32.8,34" />
+                  <mssgle:LineSegment
+                    End="-32.8,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT- Product DIM.Paths[OLE DB Source Output]"
+          TopLeft="310.7,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8,59.9999999999999"
+              Start="0,0"
+              End="8,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="4,30" />
+                  <mssgle:LineSegment
+                    End="4,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4,30"
+                    Point2="8,30"
+                    Point3="8,34" />
+                  <mssgle:LineSegment
+                    End="8,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT- Product DIM.Paths[New Output]"
+          TopLeft="277.366666666667,351.9">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-190.666666666667,60"
+              Start="0,0"
+              End="-190.666666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2748091603053" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2748091603053"
+                    Point2="0,24.2748091603053"
+                    Point3="-4,24.2748091603053" />
+                  <mssgle:LineSegment
+                    End="-186.666666666667,24.2748091603053" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-186.666666666667,24.2748091603053"
+                    Point2="-190.666666666667,24.2748091603053"
+                    Point3="-190.666666666667,28.2748091603053" />
+                  <mssgle:LineSegment
+                    End="-190.666666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-122.424720052083,29.2748091603053,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT- Product DIM.Paths[Data Conversion Output]"
+          TopLeft="318.7,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="24.8,59.9999999999999"
+              Start="0,0"
+              End="24.8,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.9999999999999" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.9999999999999"
+                    Point2="0,29.9999999999999"
+                    Point3="4,29.9999999999999" />
+                  <mssgle:LineSegment
+                    End="20.8,29.9999999999999" />
+                  <mssgle:CubicBezierSegment
+                    Point1="20.8,29.9999999999999"
+                    Point2="24.8,29.9999999999999"
+                    Point3="24.8,33.9999999999999" />
+                  <mssgle:LineSegment
+                    End="24.8,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT- Product DIM.Paths[Changing Attribute Updates Output]"
+          TopLeft="344.033333333333,351.9">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-33.3333333333333,60"
+              Start="0,0"
+              End="-33.3333333333333,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2748091603054" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2748091603054"
+                    Point2="0,24.2748091603054"
+                    Point3="-4,24.2748091603054" />
+                  <mssgle:LineSegment
+                    End="-29.3333333333333,24.2748091603054" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-29.3333333333333,24.2748091603054"
+                    Point2="-33.3333333333333,24.2748091603054"
+                    Point3="-33.3333333333333,28.2748091603054" />
+                  <mssgle:LineSegment
+                    End="-33.3333333333333,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-95.2005729166667,29.2748091603054,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
